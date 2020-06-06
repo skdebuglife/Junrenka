@@ -1,0 +1,7 @@
+Debug/
+Release/
+Junrenka/Debug/
+Junrenka/Release/
+*.filters
+*.user
+.vs/
