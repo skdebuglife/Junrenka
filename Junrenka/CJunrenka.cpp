@@ -43,7 +43,7 @@ namespace
 		{
 			pPerson->EnterSC();
 
-			::Sleep(10 * 1000);
+			::Sleep(20 * 1000);
 
 		}
 		__finally {
@@ -60,13 +60,13 @@ CJunrenka::CJunrenka()
 {
 	//インスタンス化
 	pOmae = new COmae((PWCHAR)L"お前", (PWCHAR)L"Pasta", TASTELEVEL::Delicious);
-	pTsure = new CPerson((PWCHAR)L"ツレ");
+	pKanojo = new CPerson((PWCHAR)L"彼女");
 	pBestfriend = new CBestFriend((PWCHAR)L"大親友");
 	pSelf = new CSelf((PWCHAR)L"俺");
 
 	//人間関係構築
-	SetPartner(pTsure, pBestfriend);
-	SetFriend(pOmae, pTsure);
+	SetPartner(pKanojo, pBestfriend);
+	SetFriend(pOmae, pKanojo);
 	SetFriend(pSelf, pBestfriend);
 
 	DWORD StarCount = GetTickCount() % STAR_MAX + STAR_MIN;
@@ -86,7 +86,7 @@ CJunrenka::~CJunrenka()
 {
 
 	delete pOmae;
-	delete pTsure;
+	delete pKanojo;
 	delete pBestfriend;
 	delete pSelf;
 
@@ -210,7 +210,7 @@ Skip_Label:
 void CJunrenka::PlayPoverty()
 {
 	pOmae->NotifyGameResult(GAME_RESULT::Win);
-	pTsure->NotifyGameResult(GAME_RESULT::Win);
+	pKanojo->NotifyGameResult(GAME_RESULT::Win);
 	pBestfriend->NotifyGameResult(GAME_RESULT::Win);
 	//俺だけ負け
 	pSelf->NotifyGameResult(GAME_RESULT::Lose);

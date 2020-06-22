@@ -17,7 +17,7 @@ private:
 
 	CBestFriend *pBestfriend;
 	CSelf *pSelf;
-	CPerson *pTsure;
+	CPerson *pKanojo;
 	COmae *pOmae;
 
 	std::vector<std::shared_ptr<CStar>> MemoryOfStars;
